@@ -1,0 +1,11 @@
+{
+  "editor.detectIndentation": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "html.format.extraLiners": "",
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.preserveNewLines": false,
+  "html.suggest.angular1": false
+}

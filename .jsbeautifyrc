@@ -1,0 +1,17 @@
+{
+  "indent_size": 2,
+  "max_preserve_newlines": 2,
+  "css": {
+    "space_around_combinator": true
+  },
+  "html": {
+    "extra_liners": [],
+    "indent_handlebars": true,
+    "indent_inner_html": true,
+    "unformatted": ["a"]
+  },
+  "js": {
+    "brace_style": "collapse,preserve-inline",
+    "break_chained_methods": true
+  }
+}

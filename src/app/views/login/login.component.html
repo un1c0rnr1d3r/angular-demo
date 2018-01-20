@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="login()" novalidate>
+  <label>
+    Username:
+    <input type="text" formControlName="username">
+  </label>
+  <label>
+    Password:
+    <input type="password" formControlName="password">
+  </label>
+  <button type="submit" [disabled]="!form.valid">Submit</button>
+  <span class="error" *ngIf="loginFailed">Invalid username or password.</span>
+</form>
