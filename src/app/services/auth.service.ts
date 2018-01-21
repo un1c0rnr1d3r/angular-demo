@@ -1,22 +1,30 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { State } from './state';
 
 
 @Injectable()
-export class AuthService {
-  private loginRequest = Observable.of(false);
+export class AuthService implements OnDestroy {
   private redirectAfterLoginUrl = '/';
+  private unsubscribe = new Subject<void>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private state: State) { }
 
-  isLoggedIn(): Observable<boolean> {
-    return this.loginRequest;
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 
   login(username: string, password: string): Observable<boolean> {
-    this.loginRequest = Observable.of(true);
-    return this.loginRequest.delay(2000);
+    const result = Observable.of(true).delay(2000);
+    result.takeUntil(this.unsubscribe)
+      .subscribe(isLoggedIn => {
+        this.state.authentication.isLoggedIn.next(isLoggedIn);
+      });
+    return result;
   }
 
   redirectFromLogin() {

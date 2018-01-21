@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 import { LoginComponent } from './views/login/login.component';
 import { AuthService } from './services/auth.service';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { NavigationComponent } from './views/navigation/navigation.component';
+import { State } from './services/state';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     AppComponent,
     PageNotFoundComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,10 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    State
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

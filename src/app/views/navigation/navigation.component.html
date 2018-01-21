@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+    <nav class="navbar navbar-expand-lg navbar-light" *ngIf="isLoggedIn">
+      <span class="navbar-brand">Claims Processing Demo</span>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsible" aria-controls="collapsible" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsible">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/">Dashboard</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/claims">Claims</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

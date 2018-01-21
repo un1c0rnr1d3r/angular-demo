@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('tasc-demo App', () => {
+describe('claims-processing-demo App', () => {
   let page: AppPage;
 
   beforeEach(() => {
