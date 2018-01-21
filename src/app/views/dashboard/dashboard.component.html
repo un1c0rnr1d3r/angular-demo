@@ -1,3 +1,22 @@
-<p>
-  dashboard works!
-</p>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <h5 class="card-header text-center">Claim Status</h5>
+      <div class="card-body">
+        <div class="chart-container">
+          <ngx-charts-pie-chart [results]="claims" [scheme]="{ domain: ['#6CC3D5', '#6610F2', '#56CC9D', '#FF7851'] }" [labels]="true" [doughnut]="true"></ngx-charts-pie-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <h5 class="card-header text-center">Reimbursement Status</h5>
+      <div class="card-body">
+        <div class="chart-container">
+          <ngx-charts-bar-vertical-stacked [results]="reimbursements" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FF7851', '#6610F2'] }" [yAxis]="true" yAxisLabel="USD" [showYAxisLabel]="true" [yAxisTickFormatting]="formatCurrency"></ngx-charts-bar-vertical-stacked>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
