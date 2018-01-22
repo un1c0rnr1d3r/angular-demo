@@ -34,6 +34,11 @@ export class AuthService implements OnDestroy {
     return result;
   }
 
+  logout() {
+    this.state.authentication.setUser(null);
+    this.router.navigate(['/login']);
+  }
+
   redirectFromLogin() {
     this.router.navigate([this.redirectAfterLoginUrl]);
   }

@@ -13,6 +13,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { NavigationComponent } from './views/navigation/navigation.component';
 import { State } from './services/state';
 import { ClaimsComponent } from './views/claims/claims.component';
+import { LogoutComponent } from './views/logout/logout.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ClaimsComponent } from './views/claims/claims.component';
     LoginComponent,
     DashboardComponent,
     NavigationComponent,
-    ClaimsComponent
+    ClaimsComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { LoginComponent } from './views/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { ClaimsComponent } from './views/claims/claims.component';
+import { LogoutComponent } from './views/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
     ]
   },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
