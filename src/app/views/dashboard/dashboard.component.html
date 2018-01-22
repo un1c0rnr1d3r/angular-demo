@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-6 py-3">
     <div class="card">
       <h5 class="card-header text-center">Claim Status</h5>
       <div class="card-body">
@@ -9,12 +9,32 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-6">
+  <div class="col-lg-6 py-3">
     <div class="card">
       <h5 class="card-header text-center">Reimbursement Status</h5>
       <div class="card-body">
         <div class="chart-container">
-          <ngx-charts-bar-vertical-stacked [results]="reimbursements" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FF7851', '#6610F2'] }" [yAxis]="true" yAxisLabel="USD" [showYAxisLabel]="true" [yAxisTickFormatting]="formatCurrency"></ngx-charts-bar-vertical-stacked>
+          <ngx-charts-bar-vertical-stacked [results]="reimbursements" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FF7851', '#C6C8CA'] }" [xAxis]="true" [yAxis]="true" [yAxisTickFormatting]="formatCurrency"></ngx-charts-bar-vertical-stacked>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 py-3">
+    <div class="card">
+      <h5 class="card-header text-center">Accounts Overview</h5>
+      <div class="card-body">
+        <div class="chart-container">
+          <ngx-charts-number-card [results]="accountsOverview" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FFCE67'] }"></ngx-charts-number-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 py-3">
+    <div class="card">
+      <h5 class="card-header text-center">Annual Summaries</h5>
+      <div class="card-body">
+        <div class="chart-container">
+          <ngx-charts-area-chart-stacked [results]="annualSummaries" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FFCE67'] }" [xAxis]="true" [yAxis]="true" [yAxisTickFormatting]="formatCurrency"></ngx-charts-area-chart-stacked>
         </div>
       </div>
     </div>

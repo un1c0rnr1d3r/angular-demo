@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   ];
   reimbursements = [
     {
-      'name': 'USD',
+      'name': 'Dependent Care FSA',
       'series': [
         {
           'name': 'Reimbursed',
@@ -45,6 +45,155 @@ export class DashboardComponent implements OnInit {
           'value': 600
         }
       ]
+    },
+    {
+      'name': 'Health Care FSA',
+      'series': [
+        {
+          'name': 'Reimbursed',
+          'value': 150
+        },
+        {
+          'name': 'Pending',
+          'value': 50
+        },
+        {
+          'name': 'Denied',
+          'value': 0
+        },
+        {
+          'name': 'Available',
+          'value': 1300
+        }
+      ]
+    },
+    {
+      'name': 'Health Savings Account',
+      'series': [
+        {
+          'name': 'Reimbursed',
+          'value': 0
+        },
+        {
+          'name': 'Pending',
+          'value': 0
+        },
+        {
+          'name': 'Denied',
+          'value': 0
+        },
+        {
+          'name': 'Available',
+          'value': 800
+        }
+      ]
+    }
+  ];
+  accountsOverview = [
+    {
+      'name': 'Accounts',
+      'value': 3
+    },
+    {
+      'name': 'Claims',
+      'value': 10
+    },
+    {
+      'name': 'Alerts',
+      'value': 2
+    }
+  ];
+  annualSummaries = [
+    {
+      'name': 'Health Savings Account',
+      'series': [
+        {
+          'name': '2010',
+          'value': 500
+        },
+        {
+          'name': '2011',
+          'value': 700
+        },
+        {
+          'name': '2012',
+          'value': 300
+        },
+        {
+          'name': '2013',
+          'value': 1800
+        },
+        {
+          'name': '2014',
+          'value': 100
+        },
+        {
+          'name': '2015',
+          'value': 700
+        },
+        {
+          'name': '2016',
+          'value': 800
+        },
+        {
+          'name': '2017',
+          'value': 800
+        }
+      ]
+    },
+    {
+      'name': 'Dependent Care FSA',
+      'series': [
+        {
+          'name': '2010',
+          'value': 5000
+        },
+        {
+          'name': '2011',
+          'value': 5000
+        },
+        {
+          'name': '2012',
+          'value': 5000
+        },
+        {
+          'name': '2013',
+          'value': 5000
+        },
+        {
+          'name': '2014',
+          'value': 5000
+        },
+        {
+          'name': '2015',
+          'value': 5000
+        },
+        {
+          'name': '2016',
+          'value': 5000
+        },
+        {
+          'name': '2017',
+          'value': 5000
+        }
+      ]
+    },
+    {
+      'name': 'Health Care FSA',
+      'series': [
+        {
+          'name': '2015',
+          'value': 1200
+        },
+        {
+          'name': '2016',
+          'value': 1200
+        },
+        {
+          'name': '2017',
+          'value': 1450
+        }
+      ]
     }
   ];
 
@@ -54,6 +203,6 @@ export class DashboardComponent implements OnInit {
   }
 
   formatCurrency(label: string) {
-    return new CurrencyPipe('en-US').transform(label);
+    return new CurrencyPipe('en-US').transform(label, 'USD', 'symbol', '1.0-0');
   }
 }
