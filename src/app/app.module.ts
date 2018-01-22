@@ -13,6 +13,7 @@ import { AuthService } from './services/auth.service';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { NavigationComponent } from './views/navigation/navigation.component';
 import { State } from './services/state';
+import { ClaimsComponent } from './views/claims/claims.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { State } from './services/state';
     PageNotFoundComponent,
     LoginComponent,
     DashboardComponent,
-    NavigationComponent
+    NavigationComponent,
+    ClaimsComponent
   ],
   imports: [
     BrowserModule,

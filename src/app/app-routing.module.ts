@@ -6,13 +6,15 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 import { LoginComponent } from './views/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { ClaimsComponent } from './views/claims/claims.component';
 
 const routes: Routes = [
   {
     path: '',
     canActivate: [AuthGuard],
     children: [
-      { path: '', pathMatch: 'full', component: DashboardComponent }
+      { path: '', pathMatch: 'full', component: DashboardComponent },
+      { path: 'claims', component: ClaimsComponent }
     ]
   },
   { path: 'login', component: LoginComponent },

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { State } from './state';
+import { User } from '../models/user';
 
 
 @Injectable()
@@ -18,11 +19,17 @@ export class AuthService implements OnDestroy {
     this.unsubscribe.complete();
   }
 
-  login(username: string, password: string): Observable<boolean> {
-    const result = Observable.of(true).delay(2000);
+  login(username: string, password: string): Observable<User> {
+    const fakeUser = <User>{
+      id: '1',
+      name: 'Test User',
+      email: username,
+      failedLoginAttempts: 0
+    };
+    const result = Observable.of(fakeUser).delay(2000);
     result.takeUntil(this.unsubscribe)
-      .subscribe(isLoggedIn => {
-        this.state.authentication.isLoggedIn.next(isLoggedIn);
+      .subscribe(user => {
+        this.state.authentication.setUser(user);
       });
     return result;
   }

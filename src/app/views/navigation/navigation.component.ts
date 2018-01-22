@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
   constructor(private state: State) { }
 
   ngOnInit() {
-    this.state.authentication.isLoggedIn
+    this.state.authentication.isLoggedIn()
       .subscribe(isLoggedIn => {
         this.isLoggedIn = isLoggedIn;
       });

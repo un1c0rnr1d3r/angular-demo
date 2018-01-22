@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   login() {
     this.authService.login(this.formControls.username.value, this.formControls.password.value)
       .takeUntil(this.unsubscribe)
-      .subscribe(isLoggedIn => {
-        if (isLoggedIn) {
+      .subscribe(user => {
+        if (user) {
           this.authService.redirectFromLogin();
         } else {
           this.loginFailed = true;
