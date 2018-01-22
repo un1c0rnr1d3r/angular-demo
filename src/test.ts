@@ -7,13 +7,13 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 declare const require: any;
 
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(
-  [BrowserDynamicTestingModule, RouterTestingModule, ReactiveFormsModule],
+  [BrowserDynamicTestingModule, RouterTestingModule, FormsModule, ReactiveFormsModule],
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.

@@ -14,6 +14,8 @@ import { NavigationComponent } from './views/navigation/navigation.component';
 import { State } from './services/state';
 import { ClaimsComponent } from './views/claims/claims.component';
 import { LogoutComponent } from './views/logout/logout.component';
+import { BootstrapValidationStyleDirective } from './directives/bootstrap-validation-style.directive';
+import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { LogoutComponent } from './views/logout/logout.component';
     DashboardComponent,
     NavigationComponent,
     ClaimsComponent,
-    LogoutComponent
+    LogoutComponent,
+    BootstrapValidationStyleDirective,
+    ValidationErrorComponent
   ],
   imports: [
     BrowserModule,

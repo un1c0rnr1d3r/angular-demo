@@ -26,7 +26,7 @@ export class AuthService implements OnDestroy {
       email: username,
       failedLoginAttempts: 0
     };
-    const result = Observable.of(fakeUser).delay(2000);
+    const result = Observable.of(fakeUser).delay(1000);
     result.takeUntil(this.unsubscribe)
       .subscribe(user => {
         this.state.authentication.setUser(user);

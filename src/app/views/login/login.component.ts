@@ -11,15 +11,16 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 export class LoginComponent implements OnInit, OnDestroy {
   form: FormGroup;
   loginFailed = false;
-  private formControls = {
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+  formControls = {
+    username: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)])
   };
   private unsubscribe = new Subject<void>();
 
   constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.authService.logout();
     this.form = this.formBuilder.group(this.formControls);
   }
 

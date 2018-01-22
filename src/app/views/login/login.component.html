@@ -6,13 +6,17 @@
         <div class="form-group">
           <label>
             Email Address
-            <input type="text" class="form-control" placeholder="your.name@example.org" formControlName="username">
+            <input type="text" class="form-control" autofocus placeholder="your.name@example.org" formControlName="username">
+            <app-validation-error [for]="formControls.username" type="required">Email Address is required to continue.</app-validation-error>
+            <app-validation-error [for]="formControls.username" type="email" hideWhen="required">Sorry, that email address is not valid.</app-validation-error>
           </label>
         </div>
         <div class="form-group">
           <label>
             Password
             <input type="password" class="form-control" placeholder="shhhh it's a secret" formControlName="password">
+            <app-validation-error [for]="formControls.password" type="required">Password is required.</app-validation-error>
+            <app-validation-error [for]="formControls.password" type="minlength" hideWhen="required">Password must be at least 8 characters long.</app-validation-error>
           </label>
         </div>
         <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">Login</button>
