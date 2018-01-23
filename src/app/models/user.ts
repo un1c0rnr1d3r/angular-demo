@@ -2,6 +2,8 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  lastLoggedIn?: string;
+  address: string;
+  phoneNumber: string;
+  lastLoggedInDate?: string;
   failedLoginAttempts: number;
 }

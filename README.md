@@ -1,13 +1,13 @@
 # Claims Processing Demo
 
-This is a demonstration project built with Angular, TypeScript, Bootstrap, and SASS. In the future it will also run as an Azure Web App backed by Azure Cosmos DB with Azure Search integration.
+This is a demonstration project built with Angular, TypeScript, Bootstrap, and SASS. In the future it will also run as an Azure Web App backed by Azure Cosmos DB with Azure Search and Azure Cognitive Services integration.
 
 ## Live Demonstration
 [Live Demo hosted on GitHub Pages](https://sosohero.github.io/demo/)
 
-*Any username and password combination will be considered valid.*
+*Any email address and password combination will be considered valid.*
 
-The demo utilizes fake data defined in the components. The data is not currently user-specific.
+The demo utilizes fake data. The data is not currently user-specific.
 
 ## Development Roadmap
 
@@ -26,6 +26,8 @@ The demo utilizes fake data defined in the components. The data is not currently
   * Dashboard
   * Claims
 * Add Claims Search (Azure Search)
+* Claims Receipt Image Analysis (Azure Computer Vision API and Azure Search)
+* Login with Microsoft / Google Account
 * Add Alerts
 * Add Messaging System
 * Isolate Unit Tests

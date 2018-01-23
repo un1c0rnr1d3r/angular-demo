@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import { AuthService } from '../../services/auth.service';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { State } from '../../services/state';
 
 @Component({
   templateUrl: './login.component.html',
@@ -17,11 +17,16 @@ export class LoginComponent implements OnInit, OnDestroy {
   };
   private unsubscribe = new Subject<void>();
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private state: State) { }
 
   ngOnInit() {
-    this.authService.logout();
     this.form = this.formBuilder.group(this.formControls);
+    this.state.authentication.isLoggedIn()
+      .takeUntil(this.unsubscribe)
+      .first(isLoggedIn => isLoggedIn)
+      .subscribe(() => {
+        this.authService.redirectFromLogin();
+      });
   }
 
   ngOnDestroy() {
@@ -30,14 +35,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   login() {
-    this.authService.login(this.formControls.username.value, this.formControls.password.value)
-      .takeUntil(this.unsubscribe)
-      .subscribe(user => {
-        if (user) {
-          this.authService.redirectFromLogin();
-        } else {
-          this.loginFailed = true;
-        }
-      });
+    this.authService.login(this.formControls.username.value, this.formControls.password.value);
   }
 }
