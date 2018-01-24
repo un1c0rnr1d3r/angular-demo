@@ -1,16 +1,16 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AccountService } from './account.service';
+import { ChartService } from './chart.service';
 import { State } from './state';
 
-describe('AccountService', () => {
+describe('ChartService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AccountService, State]
+      providers: [ChartService, State]
     });
   });
 
-  it('should be created', inject([AccountService], (service: AccountService) => {
+  it('should be created', inject([ChartService], (service: ChartService) => {
     expect(service).toBeTruthy();
   }));
 });

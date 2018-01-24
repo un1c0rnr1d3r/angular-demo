@@ -3,7 +3,7 @@
     <div class="card">
       <h5 class="card-header text-center">Claim Status</h5>
       <div class="card-body">
-        <div class="chart-container">
+        <div class="chart-container" *ngIf="claims">
           <ngx-charts-pie-chart [results]="claims" [scheme]="{ domain: ['#6CC3D5', '#6610F2', '#56CC9D', '#FF7851'] }" [labels]="true" [doughnut]="true"></ngx-charts-pie-chart>
         </div>
       </div>
@@ -13,7 +13,7 @@
     <div class="card">
       <h5 class="card-header text-center">Reimbursement Status</h5>
       <div class="card-body">
-        <div class="chart-container">
+        <div class="chart-container" *ngIf="reimbursements">
           <ngx-charts-bar-vertical-stacked [results]="reimbursements" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FF7851', '#C6C8CA'] }" [xAxis]="true" [yAxis]="true" [yAxisTickFormatting]="formatCurrency"></ngx-charts-bar-vertical-stacked>
         </div>
       </div>
@@ -23,7 +23,7 @@
     <div class="card">
       <h5 class="card-header text-center">Accounts Overview</h5>
       <div class="card-body">
-        <div class="chart-container">
+        <div class="chart-container" *ngIf="accountsOverview">
           <ngx-charts-number-card [results]="accountsOverview" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FFCE67'] }"></ngx-charts-number-card>
         </div>
       </div>
@@ -33,7 +33,7 @@
     <div class="card">
       <h5 class="card-header text-center">Annual Summaries</h5>
       <div class="card-body">
-        <div class="chart-container">
+        <div class="chart-container" *ngIf="annualSummaries">
           <ngx-charts-area-chart-stacked [results]="annualSummaries" [scheme]="{ domain: ['#56CC9D', '#6CC3D5', '#FFCE67'] }" [xAxis]="true" [yAxis]="true" [yAxisTickFormatting]="formatCurrency"></ngx-charts-area-chart-stacked>
         </div>
       </div>

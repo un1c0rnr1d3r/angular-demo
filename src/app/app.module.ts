@@ -16,6 +16,8 @@ import { ClaimsComponent } from './views/claims/claims.component';
 import { LogoutComponent } from './views/logout/logout.component';
 import { BootstrapValidationStyleDirective } from './directives/bootstrap-validation-style.directive';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
+import { ChartService } from './services/chart.service';
+import { AccountService } from './services/account.service';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { ValidationErrorComponent } from './components/validation-error/validati
     NgxChartsModule
   ],
   providers: [
+    AccountService,
     AuthService,
+    ChartService,
     State
   ],
   bootstrap: [AppComponent]

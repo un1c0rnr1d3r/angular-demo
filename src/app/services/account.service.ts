@@ -9,20 +9,22 @@ import { MockAccounts } from '../mocks/mock-accounts';
 export class AccountService implements OnDestroy {
   private unsubscribe = new Subject<void>();
 
-  constructor(private state: State) {
+  constructor(private state: State) { }
+
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
+  }
+
+  init() {
     this.state.authentication.user
       .takeUntil(this.unsubscribe)
-      .map(user => user.id)
+      .map(user => user && user.id)
       .distinctUntilChanged()
       .switchMap(userId => this.getAccounts())
       .subscribe(accounts => {
         this.state.accounts.setAccounts(accounts);
       });
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
   }
 
   private getAccounts(): Observable<Account[]> {

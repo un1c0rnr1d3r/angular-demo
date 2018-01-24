@@ -4,6 +4,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_BASE_HREF } from '@angular/common';
 
 import { DashboardComponent } from './dashboard.component';
+import { ChartService } from '../../services/chart.service';
+import { State } from '../../services/state';
 
 
 describe('DashboardComponent', () => {
@@ -14,7 +16,7 @@ describe('DashboardComponent', () => {
     TestBed.configureTestingModule({
       imports: [NgxChartsModule, NoopAnimationsModule],
       declarations: [DashboardComponent],
-      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
+      providers: [ChartService, State, { provide: APP_BASE_HREF, useValue: '/' }]
     }).compileComponents();
   }));
 

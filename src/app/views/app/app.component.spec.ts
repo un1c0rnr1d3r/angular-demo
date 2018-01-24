@@ -2,11 +2,13 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { State } from '../../services/state';
+import { AccountService } from '../../services/account.service';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent, NavigationComponent],
-      providers: [State]
+      providers: [AccountService, State]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
